@@ -1,0 +1,6 @@
+D:\Huicun_Beta\WebSite\Model\bin\Debug\Model.dll
+D:\Huicun_Beta\WebSite\Model\bin\Debug\Model.pdb
+D:\Huicun_Beta\WebSite\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Huicun_Beta\WebSite\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Huicun_Beta\WebSite\Model\obj\Debug\Model.dll
+D:\Huicun_Beta\WebSite\Model\obj\Debug\Model.pdb

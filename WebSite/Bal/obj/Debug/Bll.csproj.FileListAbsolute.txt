@@ -1,0 +1,11 @@
+D:\Huicun_Beta\WebSite\Bal\bin\Debug\Bal.dll
+D:\Huicun_Beta\WebSite\Bal\bin\Debug\Bal.pdb
+D:\Huicun_Beta\WebSite\Bal\obj\Debug\Bll.csprojAssemblyReference.cache
+D:\Huicun_Beta\WebSite\Bal\obj\Debug\Bll.csproj.CoreCompileInputs.cache
+D:\Huicun_Beta\WebSite\Bal\obj\Debug\Bal.dll
+D:\Huicun_Beta\WebSite\Bal\obj\Debug\Bal.pdb
+D:\Huicun_Beta\WebSite\Bal\bin\Debug\Dal.dll
+D:\Huicun_Beta\WebSite\Bal\bin\Debug\Model.dll
+D:\Huicun_Beta\WebSite\Bal\bin\Debug\Dal.pdb
+D:\Huicun_Beta\WebSite\Bal\bin\Debug\Model.pdb
+D:\Huicun_Beta\WebSite\Bal\obj\Debug\Bll.csproj.CopyComplete
