@@ -5,7 +5,7 @@
     console.log(show_num);
     $("#canvas").on('click', function () {
         draw(show_num);
-        $('#SendData1').val(show_num);
+        $('#SendData1').val(show_num);//135454884
         console.log(show_num);
     })
    /* $(".btn").on('click', function () {
