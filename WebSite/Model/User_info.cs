@@ -9,6 +9,8 @@ namespace Model
    public class User_info
     {
         public string UID { get; set; }
+        public string account { get; set; }
+        public string pwd { get; set; }
         public string Name { get; set; }
         /// <summary>
         /// 用户余额

@@ -19,7 +19,11 @@ namespace Model
         public string Description { get; set; }
        public  float Price { get; set; }
 
-        public bool is_exist { get; set; }
-
+        public int count { get; set; }
+        public string name { get; set; }
+        public List<string> lable { get; set; }
+        public List<string> picture { get; set; }
+        public string filemd { get; set; }
+        public string state { get; set; }
     }
 }

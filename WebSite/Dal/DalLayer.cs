@@ -20,7 +20,7 @@ namespace Dal
     /// <returns>1表示认证成功；-1表示访问数据库出错；0表示账号密码错误</returns>
         public int Login_Check(string account,string pwd)
         {
-            string sql = "select * from User_Login where (account=@account or UID=@account') and pwd=@pwd";
+            string sql = "select * from User_info where (account=@account or UID=@account) and pwd=@pwd";
             SqlParameter[] paras = new SqlParameter[]
            {
                 new SqlParameter("@account",account),
@@ -97,12 +97,65 @@ namespace Dal
                 return "Error";
             }
             List < Goods_info > list  = DataTableToGoods_info(dt);
-            if (list[0].is_exist)
+            if (list[0].count==0)
             {
                 return "None";
             }
                 
             return list[0].Description;
+        }
+       /// <summary>
+       /// 获取相应页码的商品信息
+       /// </summary>
+       /// <param name="pageindex">页码索引</param>
+       /// <returns>商品信息列表</returns>
+        public List<Goods_info> Get_Goods(int pageindex)
+        {
+            string sql = "select * from (select *,ROW_NUMBER() over(order by count) as RowNumber from Goods_info)a where RowNumber between @start and @end";
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter("@start",(pageindex-1)*16+1),
+                new SqlParameter("@end",pageindex*16)
+            };
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = SqlHelper.ExecuteDataTable(sql);
+            }catch(Exception ex)
+            {
+                Goods_info ur = new Goods_info();
+                ur.name = "Error";
+                List<Goods_info> list1 = new List<Goods_info>
+                {
+                    ur
+                };
+                return list1;
+            }
+            List<Goods_info> list = new List<Goods_info>();
+            list=DataTableToGoods_info(dt);
+            return list;
+        }
+        /// <summary>
+        /// 根据账号或者UID获取用户信息
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public User_info Get_Userinfo(string account)
+        {
+            string sql = "select * from User_info where UID=@account or account=@account";
+            SqlParameter para = new SqlParameter("@account", account);
+            DataTable dt=new DataTable();
+            try
+            {
+                dt=SqlHelper.ExecuteDataTable(sql, para);
+            }catch(Exception ex)
+            {
+                User_info ur = new User_info();
+                ur.UID = "Error";
+            }
+            List<User_info> list =   DataTableToUser_info(dt);
+            return list[0];
+           
         }
         /// <summary>
         /// DataTable转List<Goods_info>
@@ -119,8 +172,29 @@ namespace Dal
                 gi.Owner = dr[1].ToString();
                 gi.Description = dr[2].ToString();
                 gi.Price = float.Parse(dr[3].ToString());
-                gi.is_exist = int.Parse(dr[4].ToString()) == 1 ? true : false;
+                gi.count = int.Parse(dr[4].ToString());
                 list.Add(gi);
+            }
+            return list;
+        }
+        /// <summary>
+        /// DataTable转list<User_info>
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        private List<User_info> DataTableToUser_info(DataTable dt)
+        {
+            List<User_info> list = new List<User_info>();
+            foreach(DataRow dr in dt.Rows)
+            {
+                User_info ur = new User_info();
+                ur.UID = dr[0].ToString();
+                ur.account = dr[1].ToString();
+                ur.pwd = dr[2].ToString();
+                ur.Name = dr[3].ToString();
+                ur.Wallet = float.Parse(dr[4].ToString());
+                ur.My_goods = dr[5].ToString();
+                list.Add(ur);
             }
             return list;
         }

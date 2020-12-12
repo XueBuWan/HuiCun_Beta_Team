@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<good>
+    <owner>张三</owner>
+    <price>15</price>
+    <state>shopping</state>
+    <name>水杯</name>
+    <lable>生活用品</lable>
+    <lable>杯子</lable>
+    <picture>Goods/1/pictures/1.jpg</picture>
+    <filemd></filemd>
+</good>

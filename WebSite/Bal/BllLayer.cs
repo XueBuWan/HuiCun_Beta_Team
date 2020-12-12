@@ -40,5 +40,14 @@ namespace Bll
         {
             return dal.Get_GoodInfo(Serial_Num);
         }
+
+        public List<Goods_info> Get_Goods(int pageindex)
+        {
+            return dal.Get_Goods(pageindex);
+        }
+        public User_info Get_Userinfo(string account)
+        {
+            return dal.Get_Userinfo(account);
+        }
     }
 }

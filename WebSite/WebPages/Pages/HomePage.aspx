@@ -69,6 +69,28 @@
             </div>
             <div id="ShowBox">
                 ShowBox
+                <asp:Repeater ID="Repeater1" runat="server">
+                <HeaderTemplate>我是脑袋<table></HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <th>
+                                <img src="<%#Eval("picture[0]")%>"/>
+                            </th>
+                            <th>
+                                <div>
+                                <label id="label3" class="showlable" runat="server" text="" ><%#Eval("name")%></label>
+                                <br />
+                                <label id="label1" class="showlable" runat="server" text="">价格：</label><%#Eval("prince")%>
+                                <br />
+                                    <asp:Button ID="Button1" runat="server" Text="查看" />
+                                     <asp:Button ID="Button2" runat="server" Text="购买" />
+                                </div>
+                                
+                            </th>
+                        </tr>
+                    </ItemTemplate>
+                <FooterTemplate></table></FooterTemplate>
+                </asp:Repeater>
             </div>
         </div>
     </form>
