@@ -71,10 +71,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\SideGuide.css" />
     <Content Include="js\Check.js" />
+    <Content Include="js\Guidejs.js" />
     <Content Include="Pages\HomePage.aspx" />
+    <Content Include="Pages\Self_Info.aspx" />
+    <Content Include="Pages\UpGood.aspx" />
     <Content Include="Pages\User_Login.aspx" />
     <Content Include="Pages\User_Register.aspx" />
+    <Content Include="Pictures\facetest.jpg" />
     <Content Include="Pictures\商标.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -85,6 +90,20 @@
     </Compile>
     <Compile Include="Pages\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Self_Info.aspx.cs">
+      <DependentUpon>Self_Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Self_Info.aspx.designer.cs">
+      <DependentUpon>Self_Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UpGood.aspx.cs">
+      <DependentUpon>UpGood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UpGood.aspx.designer.cs">
+      <DependentUpon>UpGood.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\User_Login.aspx.cs">
       <DependentUpon>User_Login.aspx</DependentUpon>
@@ -111,9 +130,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Css\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Bal\Bll.csproj">
       <Project>{aa41b941-7385-45c1-a583-1bf16cc7e1db}</Project>

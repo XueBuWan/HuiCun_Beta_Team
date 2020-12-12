@@ -50,7 +50,7 @@ namespace WebPages.Pages
                 gi.filemd = good.GetElementsByTagName("filemd")[0].InnerText;
 
             }
-            Repeater1.DataBind() = list;
+            Repeater1.DataSource = list;
 
 
         }

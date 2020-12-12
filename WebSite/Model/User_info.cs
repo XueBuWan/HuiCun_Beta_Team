@@ -20,5 +20,6 @@ namespace Model
         /// 记录用户商品信息的xml的地址
         /// </summary>
        public  string My_goods { get; set; }
+       public string Face { get; set; }
     }
 }
