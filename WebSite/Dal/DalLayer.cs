@@ -194,6 +194,7 @@ namespace Dal
                 ur.Name = dr[3].ToString();
                 ur.Wallet = float.Parse(dr[4].ToString());
                 ur.My_goods = dr[5].ToString();
+                ur.Face = dr[6].ToString();
                 list.Add(ur);
             }
             return list;

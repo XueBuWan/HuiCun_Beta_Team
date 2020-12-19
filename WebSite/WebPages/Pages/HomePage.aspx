@@ -6,6 +6,9 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="../Css/SideGuide.css"/>
+      <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../js/Guidejs.js"></script>
     <style type="text/css">
     #Page{
 
@@ -52,11 +55,29 @@
     </style>
 </head>
 <body>
+        <div id="side">
+            <ul id="sideul">
+                <li class="sideli" id="sideliface">
+                     <img id="face" runat="server" src="../Pictures/facetest.jpg" />
+                    
+                </li>  
+                <li class="sideli">
+                     <a href="Self_Info.aspx" class="SideLink" runat="server" id="SelfInfo">个人信息</a>
+                </li>
+                <li class="sideli">
+                     <a href="" class="SideLink" runat="server" id="ShoppingCart">购物车</a>
+                </li>
+            </ul>
+               <input id="opt" runat="server" type="image" src="../Pictures/left.jpg"  onclick="move()"/>
+           
+           
+        </div> 
     <form id="form1" runat="server">
+        
         <div id="Page" >
             <div id="Logo" >
                
-                <img src="../Pictures/商标.jpg" style="width: 350px; height: 226px"/>
+                <img src="../Pictures/商标.jpg"  style="width: 350px; height: 226px"/>
             </div>
             <div id="SearchBox">
                
@@ -91,8 +112,10 @@
                     </ItemTemplate>
                 <FooterTemplate></table></FooterTemplate>
                 </asp:Repeater>
+
             </div>
         </div>
+        <div style="height:10000px;background-color:aqua"></div>
     </form>
 </body>
 </html>

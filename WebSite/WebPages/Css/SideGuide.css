@@ -1,0 +1,41 @@
+﻿#side{
+    position:absolute;
+    top:150px;
+    left:0px;
+    width:110px;
+    background-color:#b39696;
+}
+#face {
+   width:50px;
+   height:50px;
+   padding:0px;
+   border-radius:20px;
+}
+.SideLink {
+    display: block;
+    color: #000;
+    padding:2px 10px;
+    text-decoration: none;
+}
+    .SideLink:hover {
+        background-color: #555;
+        color: white;
+    }
+.side {
+    
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+ul {
+    list-style-type: none;
+    padding:2px 10px;
+}
+#opt{
+    position:absolute;
+    top:10px;
+    left:110px;
+    width:10px;
+    height:50px
+}
