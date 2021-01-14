@@ -19,7 +19,7 @@ namespace WebPages.Pages
                 if (Session["UID"] is null)
                 {
                      Response.Write("<script>alert('请登录')</script>");
-                    Response.Redirect("User_Login.aspx");
+                    Response.Redirect("User_Register.aspx");
                    
                 }
                 else
