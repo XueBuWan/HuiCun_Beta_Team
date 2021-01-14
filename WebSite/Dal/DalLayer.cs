@@ -20,7 +20,7 @@ namespace Dal
     /// <returns>1表示认证成功；-1表示访问数据库出错；0表示账号密码错误</returns>
         public int Login_Check(string account,string pwd)
         {
-            string sql = "select * from User_info where (account=@account or UID=@account) and pwd=@pwd";
+            string sql = "select * from User_login where (account=@account or UID=@account) and pwd=@pwd";
             SqlParameter[] paras = new SqlParameter[]
            {
                 new SqlParameter("@account",account),
@@ -71,6 +71,22 @@ namespace Dal
             {
                i= SqlHelper.ExecuteNonQuery(sql, paras);
             }catch(Exception ex)
+            {
+                //此处可以添加错误信息记录
+                return -1;
+            }
+        sql = "insert into User_info (UID,account) values(@UID,@account)";
+            SqlParameter[] paras1 = new SqlParameter[]
+            {
+                new SqlParameter("@UID",ul.UID),
+                new SqlParameter("@account",ul.account),
+            };
+         i = 0;
+            try
+            {
+                i = SqlHelper.ExecuteNonQuery(sql, paras1);
+            }
+            catch (Exception ex)
             {
                 //此处可以添加错误信息记录
                 return -1;
@@ -190,11 +206,11 @@ namespace Dal
                 User_info ur = new User_info();
                 ur.UID = dr[0].ToString();
                 ur.account = dr[1].ToString();
-                ur.pwd = dr[2].ToString();
-                ur.Name = dr[3].ToString();
-                ur.Wallet = float.Parse(dr[4].ToString());
-                ur.My_goods = dr[5].ToString();
-                ur.Face = dr[6].ToString();
+           //     ur.pwd = dr[2].ToString();
+                ur.Name = dr[2].ToString();
+                ur.Wallet = float.Parse(dr[3].ToString());
+                ur.My_goods = dr[4].ToString();
+                ur.Face = dr[5].ToString();
                 list.Add(ur);
             }
             return list;

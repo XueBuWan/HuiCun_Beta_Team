@@ -42,6 +42,7 @@ namespace WebPages.Pages
                     int flag = bll.User_Register(ul);
                     if(flag == 1)
                     {
+
                         Response.Write("<script>alert('注册成功')</script>");
                     }
                     else
@@ -58,9 +59,25 @@ namespace WebPages.Pages
 
         }
 
-        protected void Lg_Click(object sender, ImageClickEventArgs e)
+       protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            Response.Redirect("User_Login.aspx");
+            string account = Login1.UserName;
+            string pwd = Login1.Password;
+            BllLayer bll = new BllLayer();
+            int flag = bll.Check_Login(account, pwd);
+            if (flag == 1)
+            {
+                Login1.DestinationPageUrl = "HomePage.aspx";
+                Session.Add("UID", bll.Get_Userinfo(account).UID);
+                e.Authenticated = true;
+            }
+            else if (flag == 0)
+            {
+                // Response.Write("<style>alert('账号或密码错误！')</style>");
+
+                e.Authenticated = false;
+            }
         }
+
     }
 }

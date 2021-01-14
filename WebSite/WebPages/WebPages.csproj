@@ -77,7 +77,6 @@
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Pages\Self_Info.aspx" />
     <Content Include="Pages\UpGood.aspx" />
-    <Content Include="Pages\User_Login.aspx" />
     <Content Include="Pages\User_Register.aspx" />
     <Content Include="Pictures\facetest.jpg" />
     <Content Include="Pictures\商标.jpg" />
@@ -104,13 +103,6 @@
     </Compile>
     <Compile Include="Pages\UpGood.aspx.designer.cs">
       <DependentUpon>UpGood.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\User_Login.aspx.cs">
-      <DependentUpon>User_Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\User_Login.aspx.designer.cs">
-      <DependentUpon>User_Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\User_Register.aspx.cs">
       <DependentUpon>User_Register.aspx</DependentUpon>

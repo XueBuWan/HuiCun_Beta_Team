@@ -8,7 +8,5 @@ function move() {
         $("#side").animate({ left: '0px' });
         console.log("right");
         $("#opt").attr("src", "../Pictures/left.jpg")
-    }
-    
-   
+    } 
 }
